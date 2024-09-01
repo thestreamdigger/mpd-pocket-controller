@@ -51,7 +51,15 @@ COMMANDS = {
     },
     'EXECUTE_SCRIPT': {
         'short': lambda: run_command('/home/pi/roulette.sh'),
-        'long': lambda: run_command('/home/pi/roulette_album.sh')
+        'long': lambda: [
+            run_command('pkill -f roulette.sh'),
+            run_command('pkill -f ashuffle'),
+            time.sleep(1),
+            run_command('mpc stop'),
+            run_command('mpc clear'),
+            run_command('mpc consume off'),
+            run_command('/home/pi/roulette_album.sh')
+        ]
     }
 }
 
