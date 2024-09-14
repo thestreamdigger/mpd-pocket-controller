@@ -42,7 +42,7 @@ COMMANDS = {
         ]
     },
     'PREV': {
-        'short': lambda: run_command('mpc prev'),
+        'short': lambda: run_command('mpc cdprev'),
         'long': lambda: run_command('sudo python3 /home/pi/copy_usb.py')
     },
     'NEXT': {
